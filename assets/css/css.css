@@ -1,0 +1,156 @@
+
+.jumbotron p{
+    font-size: 14px!important;
+    margin: 0px;
+}
+
+.image{
+    position: absolute;
+    top: 0;
+    left: -10%;
+    max-height: 100vh;
+}
+
+.image img {
+    height: 100vh;
+    border-bottom-right-radius: 25%;
+}
+
+.h1login{
+    z-index: 100px;
+}
+
+
+ body{
+    background: #1f3c24;
+    background-repeat: none;
+    min-height: 100vh;
+    color: white;
+}
+
+nav{
+    background: #c3ca5e!important;
+
+}
+
+.tableAlumnos{
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.card-pdf{
+    position: relative;
+    /* background-image: url('assets/img/pdf-img.png'); */
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+.img-pdf{
+    max-width: 100%;
+    box-sizing: border-box;
+
+    /* height: 100%; */ 
+}
+
+.list-name{
+    position: absolute;
+    z-index: 1px;
+    bottom: 50%;
+    background: black;
+    color: wheat;
+
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+
+
+@media (max-width: 480px){
+    .image {
+        max-height: 100vh;
+    }
+    .image img{
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /*Login  */
+
+    .log{
+        margin-bottom: auto;
+    }
+
+  
+    .titulo-tutoria{
+        margin-top: 0px;
+    }
+
+
+    /* alumnos */
+    .table{
+        width: 100%;
+        overflow-x: scroll;
+    }
+}
+@media (min-width: 481px) and (max-width: 780px){
+
+    h1{
+        font-size: 32px !important;
+        margin-bottom: revert;
+    }
+    /*Login  */
+
+    .log{
+        margin-bottom: auto;
+    }
+    #form_login{
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .jumbotron{
+        border-radius: 15px;      
+    }
+    
+
+    
+    .jumbotron p {
+        font-size: 14px ;
+        font-weight: bolder;
+        box-sizing: border-box !important;
+    }
+
+
+    /* alumnos */
+    .table{
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .busquedad{
+        display: flex;
+        margin: auto;
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 781px) and (max-width: 1024px){
+
+    
+    .table{
+        width: 100%;
+        overflow-x: auto;
+        box-sizing: border-box;
+    }
+
+    .navbar-brand{
+        font-size: 16px!important;
+    }
+
+}
