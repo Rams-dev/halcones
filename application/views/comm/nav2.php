@@ -18,9 +18,9 @@
     <?php }?>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <!-- <li class="nav-item ">
+      <li class="nav-item">
         <a class="navbar-brand text-muted rounded <?= $this->uri->segment(2) == 'cuenta' ? 'active bg-success' : '';?> " href="<?=base_url('users/cuenta/')?>"><span class="fa fa-user"></span> <?php echo $this->session->userdata('nombre') . ' '. $this->session->userdata('apellido_p');?></a>
-      </li> -->
+      </li>
       <li class="nav-item ">
         <a class="navbar-brand nav-link px-4 rounded" href="<?= base_url('login/logout');?>"><span class="fa fa-power-off"></span> Cerrar session</a>
       </li>

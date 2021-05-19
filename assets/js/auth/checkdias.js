@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('#miercoles').hide();
     $('#jueves').hide();
     $('#viernes').hide();
+    $('#sabado').hide();
     $('#limite').hide();
      $('#lu').click(function(){
        $('#lunes').slideToggle();
@@ -23,6 +24,9 @@ $(document).ready(function(){
 
       $('#vi').click(function(){
         $('#viernes').slideToggle();
+      });
+      $('#sa').click(function(){
+        $('#sabado').slideToggle();
       });
       $('#lim').click(function(){
         $('#limite').slideToggle();

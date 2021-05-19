@@ -7,6 +7,7 @@ class Alumno extends CI_model{
     }
 
 
+
     public function get_datos_user(){
 
         $sql = $this->db->get_where('usuarios', array('id' => $this->session->userdata('id')));
@@ -31,6 +32,17 @@ class Alumno extends CI_model{
             return false;
         }
     }
+
+    public function updateuser($id, $data){
+        $this->db->where('id',$id);
+        $sql = $this->db->update('usuarios',$data);
+        if($sql){
+            return true;
+        }else{
+            return $sql;
+        }
+    }
+
 
     public function liberaralumnofromtutoria($id){
         $sql = $this->db->insert('liberados',array('alumno_id' => $id));

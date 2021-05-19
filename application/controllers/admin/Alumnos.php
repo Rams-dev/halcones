@@ -38,6 +38,8 @@ class Alumnos extends CI_Controller {
            
     }
 
+    
+
 
     public function eliminar(){
         if($this->session->userdata('is_logged') and $this->session->userdata('rango') == "1" ){

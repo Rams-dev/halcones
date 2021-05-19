@@ -39,8 +39,9 @@
                         echo '<small>Jueves: '. $alumno['jueves'] .' </small><br>';
                     }
                     if ($alumno['viernes'] > 3){
-                        echo '<small>Viernes: '. $alumno['lunes'] .' </small>';
+                        echo '<small>Viernes: '. $alumno['viernes'] .' </small>';
                     }
+                   
                 ?>
     </div>
 <div class="">

@@ -75,6 +75,16 @@
                             <input type="time" name="ht_vi" id="ht_vi" class="form-control">
                     </div>
                 </div>
+
+                <div class="col">
+                    <input type="checkbox" name="sa" id="sa"> Sabado
+                    <div class="justify-content-center mt-2" id="sabado">
+                        <label for="" disable >Inicio</label>
+                            <input type="time" name="hi_sa" id="hi_sa" class="form-control"><br>
+                        <label for="">Térmimo</label>
+                            <input type="time" name="ht_sa" id="ht_sa" class="form-control">
+                    </div>
+                </div>
                 <div class="invalid-feedback" id="error"></div>
             </div>
         </div>

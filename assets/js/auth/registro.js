@@ -23,14 +23,8 @@
 	$('#contrasena > input').focus(function(){
 		$('#contrasena > input').removeClass('is-invalid');
 	});
-
-	
-
 	$('#registroUsuarios').submit(function(ev){
-		
-				
-
-		$.ajax({
+			$.ajax({
 			url: 'registrarUsuario',
 			datatype: 'JSON',
 			type: 'POST',

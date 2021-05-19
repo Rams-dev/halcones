@@ -1,4 +1,5 @@
 <div class="container">
+  <h1 class="text-center m-0">Tutorias</h1>
     <?php
     // var_dump($tutorias);
       if($status){
@@ -18,10 +19,10 @@
     ?>
      <div class="row mt-5">
         <?php foreach($tutorias as $tutoria): ?>
-          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-2 <?= $tutoria['limite'] != "null" ? 'border-danger' : ""?>">
-            <div class="jumbotron p-2 mb-2 bg-light">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 p-1 <?= $tutoria['limite'] != "null" ? 'border-danger' : ""?>">
+            <div class="jumbotron p-2 mb-1 bg-light">
               <h3 class="titulo-tutoria text-success mt-2"><?= $tutoria['nombre']; ?></h3>
-              <p class="text-dark"><i class="fas fa-chalkboard-teacher"></i> <span class="font-weight-lighter text-dark"><?= $tutoria['encargado'];?></span></p>              
+              <p class="text-dark"><span class="font-weight-lighter text-dark"><i class="fa fa-user"></i>  <?= $tutoria['encargado'];?></span></p>              
                   <hr class="my-3">
               <a href="<?= base_url('users/dashboarduser/detalles/'. $tutoria['id'])?>"  value="ver horarios" class="btn btn-success btn-lg btn-block">Ver horarios</a>
            </div>

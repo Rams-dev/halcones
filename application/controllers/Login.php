@@ -109,6 +109,7 @@ class Login extends CI_Controller {
 
 	}
 
+
 	public function logout(){
 		$vars = array('id',
 		'nombre',

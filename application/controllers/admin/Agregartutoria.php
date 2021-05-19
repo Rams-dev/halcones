@@ -52,6 +52,8 @@ class Agregartutoria extends CI_Controller {
                     $ju2= $this->input->post('ht_ju');
                     $vi= $this->input->post('hi_vi');
                     $vi2= $this->input->post('ht_vi');
+                    $sa= $this->input->post('hi_sa');
+                    $sa2= $this->input->post('ht_sa');
                     
                     $datos= array(
                         'nombre' => $tutoria,
@@ -61,6 +63,8 @@ class Agregartutoria extends CI_Controller {
                         'miercoles' => $mi . ' - ' . $mi2,
                         'jueves' => $ju . ' - ' . $ju2,
                         'viernes' => $vi . ' - ' . $vi2,
+                        'viernes' => $vi . ' - ' . $vi2,
+                        'sabado' => $sa . ' - ' . $sa2,
                         'limite' => $limite,
                     );
                     

@@ -19,6 +19,7 @@ echo '<small class="display-5 float-left"><span class="badge badge-pill badge-se
       <th scope="col">Miercoles</th>
       <th scope="col">Jueves</th>
       <th scope="col">Viernes</th>
+      <th scope="col">Sabado</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +31,7 @@ echo '<small class="display-5 float-left"><span class="badge badge-pill badge-se
       <td><?= $tutoria['miercoles'];?></td>
       <td><?= $tutoria['jueves'];?></td>
       <td><?= $tutoria['viernes'];?></td>
+      <td><?= $tutoria['sabado'];?></td>
       
     </tr>
     <?php endforeach;?>
