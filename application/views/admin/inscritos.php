@@ -1,4 +1,5 @@
 <?php
+
      $count = 0;
      foreach ($tutoria as $limite ) {
      }
@@ -23,23 +24,24 @@
         <div>
             <b class="d-block"> Días:</b>
     <?php
-        foreach($inscritos as $alumno){
-            
-        }
-                    if ($alumno['lunes'] > 3){
-                    echo '<small>Lunes: '. $alumno['lunes'] .' </small><br>';
+    
+                    if ($limite['lunes'] > 3){
+                    echo '<small>Lunes: '. $limite['lunes'] .' </small><br>';
                     }
-                    if ($alumno['martes'] > 3){
-                        echo '<small>Martes: '. $alumno['martes'] .' </small><br>';
+                    if ($limite['martes'] > 3){
+                        echo '<small>Martes: '. $limite['martes'] .' </small><br>';
                     }
-                    if ($alumno['miercoles'] > 3){
-                        echo '<small>Miercoles: '. $alumno['miercoles'] .' </small><br>';    
+                    if ($limite['miercoles'] > 3){
+                        echo '<small>Miercoles: '. $limite['miercoles'] .' </small><br>';    
                     }
-                    if ($alumno['jueves'] > 3){
-                        echo '<small>Jueves: '. $alumno['jueves'] .' </small><br>';
+                    if ($limite['jueves'] > 3){
+                        echo '<small>Jueves: '. $limite['jueves'] .' </small><br>';
                     }
-                    if ($alumno['viernes'] > 3){
-                        echo '<small>Viernes: '. $alumno['viernes'] .' </small>';
+                    if ($limite['viernes'] > 3){
+                        echo '<small>Viernes: '. $limite['viernes'] .' </small>';
+                    }
+                    if ($limite['sabado'] > 3){
+                        echo '<small>Sabado: '. $limite['sabado'] .' </small>';
                     }
                    
                 ?>

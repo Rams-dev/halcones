@@ -14,7 +14,7 @@
 
                 <div class="form-group" id="ap">
                     <label for="">Primer Apellido</label>
-                    <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Hernandez">
+                    <input type="text" name="am" id="am" class="form-control" placeholder="Hernandez">
                     <div class="invalid-feedback" id="error">
 
                     </div>                
@@ -22,7 +22,7 @@
 
                 <div class="form-group" id="am">
                     <label for="">Segundo Apellido</label>
-                    <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Ramirez">
+                    <input type="text" name="ap" id="ap" class="form-control" placeholder="Ramirez">
                     <div class="invalid-feedback" id="error">
 
                     </div>                
