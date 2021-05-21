@@ -36,7 +36,7 @@ class Listas extends CI_Controller {
 
         $this->load->view("comm/head");
         $this->load->view("comm/nav1");
-        $this->load->view('listas/AgregarListas',$data);
+        $this->load->view('listas/agregarListas',$data);
         $this->load->view("comm/foot");
 
     }

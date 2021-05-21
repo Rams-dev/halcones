@@ -12,7 +12,9 @@
             <a href="<?=base_url('login')?> "class="btn btn-outline-success">iniciar sesion</a>
         </div>
             <div></div>
-         <?php }else{?>
+         <?php 
+            } else {
+        ?>
     <div class="row justify-content-center mt-4">
         <form action="<?= base_url('Profesores/validateRegistro')?>" class="form-group col-lg-4 col-md-4 col-sm-10" id="frm-register-prof" method="post">
             <div class="form-group">
@@ -59,5 +61,21 @@
 
 </div>
 
+<script>
 
-<script src="<?php echo base_url()?>assets/js/auth/mask.js"></script>
+let $nombre = document.querySelector("#nombre")
+let $ap = document.querySelector("#apellido_p")
+let $am = document.querySelector("#apellido_m")
+
+const check = (e) => {
+    e.preventDefault()
+    let nombre = e.target.value.replace(/[<>!?¿$#%&/()=*]/g,'')
+    e.target.value = nombre
+    
+    // console.log(e.target.value)
+}
+$nombre.addEventListener('keyup', (e) => check(e))
+$ap.addEventListener('keyup', (e) => check(e))
+$am.addEventListener('keyup', (e) => check(e))
+
+</script>

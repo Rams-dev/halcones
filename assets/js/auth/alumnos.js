@@ -2,7 +2,8 @@ let $data = document.querySelectorAll('.form-control')
 
 
 function isEmpty(field){
-    if(field == undefined){
+    console.log(typeof(field))
+    if(field == ""){
         return true
     }
 }
@@ -22,13 +23,12 @@ console.log(validar())
 
 
 $("#frm-update").submit(function(e){
+    e.preventDefault();
     if(validar() > 0){
         alertify.error('rellena todos los campos')
         return 0
-    }
-        
-        e.preventDefault();
-
+    }else{
+    
         $.ajax({
             url:$(this).attr("action"),
             data:$(this).serialize(),
@@ -37,11 +37,13 @@ $("#frm-update").submit(function(e){
         })
         .done(function(response){
             alertify.success(response)
-
+    
             console.log(response)
-
+    
         })
         .fail(function(err){
             console.log(err);
         })
+    }
+        
     })

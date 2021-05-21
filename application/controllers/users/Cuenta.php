@@ -24,13 +24,15 @@ class Cuenta extends CI_Controller {
 	public function actualizarUsuario($id_user){
 		if($this->session->userdata('is_logged')){
 			$formData = $this->input->post();
+            $password = $this->input->post('contrasena');
+			if($password == "********"){
+                unset($formData['contrasena']);
+			}
             if($this->Alumno->updateuser($id_user, $formData)){
                 echo json_encode('actualizado correctamente');
             }else{
                 echo json_encode('ha ocurrido un error');
-            }
-
-			
+            }			
 		}else{
 			redirect('login');
 		}

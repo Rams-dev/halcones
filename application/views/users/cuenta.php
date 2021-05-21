@@ -1,9 +1,7 @@
 
-<?php var_dump($datos);?>
-
 <div class="container mt-3">
     
-    <h1 class="text-center" >Registro de alumnos</h1>
+    <h1 class="text-center" >Perfil</h1>
     <div class="row justify-content-lg-between mt-5">
         <div class="col-lg-4">
             <form action="<?= base_url("users/cuenta/actualizarUsuario/".$datos['id'])?>" method="post" id="frm-update" >
@@ -64,7 +62,7 @@
 
                 <div class="form-group" id="contrasena">
                     <label for="">Contraseña</label>
-                    <input type="password" name="contrasena" id="contrasena" class="form-control">
+                    <input type="password" name="contrasena" id="contrasena" value="********" class="form-control">
                     <div class="invalid-feedback" id="error"></div>                
                 </div>
                 

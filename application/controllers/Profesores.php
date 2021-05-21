@@ -25,7 +25,8 @@
 
 			$this->app = strtoupper($this->input->post("apellido_p")); 
 			$this->apm = strtoupper($this->input->post("apellido_m")); 
-			// var_dump($this->obtenerMatricula());
+			
+			
 			$matricula = $this->obtenerMatricula();
 			$data['matricula'] = $matricula;
 			$data['rango'] = 2;
