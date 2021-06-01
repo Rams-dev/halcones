@@ -4,7 +4,6 @@
     
     <?php 
         if(isset($matricula)){ 
-            var_dump(($matricula));
          ?>
          <div class="alert alert-info text-center" role="alert">
             <p>Esta es tu matricula, anotala para iniciar sesion</p>
@@ -44,7 +43,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Grupo</label>
-                <input type="text" class="form-control" name="grupo" id="grupo">
+                <input type="text" class="form-control grupo" name="grupo" id="grupo">
             </div>
             <div class="form-group">
                 <label for="contrasena">Contraseña</label>
@@ -60,6 +59,7 @@
 <?php }?> 
 
 </div>
+
 
 <script>
 

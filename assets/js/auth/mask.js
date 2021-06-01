@@ -1,5 +1,3 @@
-$(document).ready(function(){
-   
       $("#matricula > input, #grupo > input").on("keypress", function () {
          $input=$(this);
          setTimeout(function () {
@@ -8,9 +6,9 @@ $(document).ready(function(){
         })
 
         
-    $('#matricula > input').mask('AAAA000000');
-    $('#telefono > input').mask('0000000000');
-    $('#grupo > input').mask('AAA000');
+    $('.matricula').mask('AAAA000000');
+    $('.telefono').mask('0000000000');
+    $('.grupo').mask('AAA000');
 
 
     $('#nombre > input').keyup(function(evt){
@@ -55,4 +53,3 @@ $(document).ready(function(){
 
     
 
-});

@@ -91,4 +91,9 @@ class Listas extends CI_Controller {
         
     }
 
+    public function eliminarLista(){
+        $data =$this->input->post();
+        return $data;
+    }
+
 }

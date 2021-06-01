@@ -10,7 +10,7 @@
   ?>
     <div class="row mt-5">  
       <?php foreach($tutorias as $tutoria): ?>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-2" >
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 p-1 target" >
           <button type="button" onclick="eliminarTutoria(<?=$tutoria['id'];?>)" class="close mr-3 mt-2" data-toggle="tooltip" data-placement="top" title="Eliminar  tutoria" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

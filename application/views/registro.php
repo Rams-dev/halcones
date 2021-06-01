@@ -49,7 +49,7 @@
                 <div class="col-lg-4">
                 <div class="form-group" id="grupo">
                     <label for="">Grupo</label>
-                    <input type="text" name="grupo" id="grupo" class="form-control" placeholder="T101">
+                    <input type="text" name="grupo" id="grupo" class="form-control grupo" placeholder="T101">
                     <div class="invalid-feedback" id="error">
 
                     </div>                
@@ -57,14 +57,14 @@
 
                 <div class="form-group" id="matricula">
                     <label for="">Matricula</label>
-                    <input type="text" name="matricula" id="matricula"  class="form-control" placeholder="UTTI162038">
+                    <input type="text" name="matricula" id="matricula"  class="form-control matricula" placeholder="UTTI162038">
                     <div class="invalid-feedback" id="error">
                     </div>                
                 </div>
 
                 <div class="form-group" id="telefono">
                     <label for="">número telefónico</label>
-                    <input type="phone" name="telefono" id="telefono"  class="form-control" placeholder="9511986720">
+                    <input type="phone" name="telefono" id="telefono"  class="form-control telefono" placeholder="9511986720">
                     <div class="invalid-feedback" id="error">
                     </div>                
                 </div>
@@ -91,4 +91,4 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script> -->
 <script src="<?=base_url('assets/js/auth/registro.js')?>"></script>
-<script src="<?php echo base_url()?>assets/js/auth/mask.js"></script>
+

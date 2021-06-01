@@ -1,7 +1,20 @@
+/* 
+.body{
+    background-image: url('../img/fondo.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: auto;
+} */
 
 .jumbotron p{
     font-size: 14px!important;
     margin: 0px;
+}
+
+.btn-delete{
+    position: absolute;
+    top: 5px;
+    right: 10px;
 }
 
 .image{
@@ -28,11 +41,6 @@
     color: white;
 }
 
-nav{
-    background: #c3ca5e!important;
-
-}
-
 .tableAlumnos{
     height: 100vh;
     overflow-y: auto;
@@ -40,7 +48,6 @@ nav{
 
 .card-pdf{
     position: relative;
-    /* background-image: url('assets/img/pdf-img.png'); */
     box-sizing: border-box;
     padding: 0px;
 }
@@ -64,11 +71,15 @@ nav{
     font-size: 20px;
 }
 
-
-
-
-
 @media (max-width: 480px){
+
+    .body{
+        background-image: url('../img/fondo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
     .image {
         max-height: 100vh;
     }
@@ -149,8 +160,5 @@ nav{
         box-sizing: border-box;
     }
 
-    .navbar-brand{
-        font-size: 16px!important;
-    }
 
 }
