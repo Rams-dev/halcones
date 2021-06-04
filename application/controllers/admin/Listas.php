@@ -92,8 +92,23 @@ class Listas extends CI_Controller {
     }
 
     public function eliminarLista(){
-        $data =$this->input->post();
-        return $data;
+        $data = $this->input->post();
+        if($sql = $this->Lista->existId($data["id"])){
+            foreach($sql as $s){
+                unlink('assets/pdf/listas/'. $s['lista']);
+
+            }
+            if($this->Lista->deleteLista($data["id"])){
+                echo json_encode(array('mensaje'=>'Lista elimianda correctamente!'));
+            }else{
+            echo json_encode(array("error"=> "ha ocurrido un error"));
+            }
+
+        }else{
+            echo json_encode(array("error"=> "no existe ese id"));
+        }
+
+
     }
 
 }

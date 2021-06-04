@@ -48,27 +48,23 @@
 
 .card-pdf{
     position: relative;
-    box-sizing: border-box;
-    padding: 0px;
+    background: white;
+    
 }
 
 .img-pdf{
     max-width: 100%;
-    box-sizing: border-box;
-
-    /* height: 100%; */ 
 }
 
 .list-name{
     position: absolute;
-    z-index: 1px;
     bottom: 50%;
+    left: 5px;
+    right: 5px;
     background: black;
     color: wheat;
-
-    width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 @media (max-width: 480px){

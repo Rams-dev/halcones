@@ -31,9 +31,9 @@
 </div>
 
 <script>
-$("#listas").dropify({
-    'default': "Arrastra o selecciona tus archivos",
-});
+// $("#listas").dropify({
+//     'default': "Arrastra o selecciona tus archivos",
+// });
 
 $('#form-list').submit(function(e){
     e.preventDefault()
