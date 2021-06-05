@@ -1,10 +1,10 @@
-/* 
-.body{
-    background-image: url('../img/fondo.png');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: auto;
-} */
+ 
+body{
+    background: #349c46;
+    min-height: 100vh;
+    color: white;
+   
+}
 
 .jumbotron p{
     font-size: 14px!important;
@@ -34,11 +34,16 @@
 }
 
 
- body{
-    background: #1f3c24;
-    background-repeat: none;
+.body{
+    background: #349c46;
     min-height: 100vh;
     color: white;
+    background-image: url(../img/fondo.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 500px;
+    background-attachment: fixed;
+    background-position-x: right;
 }
 
 .tableAlumnos{
@@ -70,10 +75,15 @@
 @media (max-width: 480px){
 
     .body{
-        background-image: url('../img/fondo.png');
-        background-size: contain;
+        background: #349c46;
+        min-height: 100vh;
+        color: white;
+        background-image: url(../img/girl-runer.png);
         background-repeat: no-repeat;
         background-position: bottom;
+        background-size: 500px;
+        background-attachment: fixed;
+        background-position-x: right;
     }
 
     .image {

@@ -1,6 +1,9 @@
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
     <div class="nav-boton">
-      <img id="menu" src="<?= base_url()?>/assets/img/menu.png" width="60" heigth="60">
+      <div class="text-white">
+        <i class="fas fa-bars text-white" id="menu"></i>
+
+      </div>
     </div>
       <div class="container">
       <ul class="navbar-nav mr-auto">

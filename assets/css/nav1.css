@@ -18,8 +18,10 @@
     .nav-boton{
         display: flex;
         justify-content: flex-end;
+        color: white;
+        width: 70px;
+        font-size: 35px;
     } 
-
     .navbar-nav{
         display: none;
     }
@@ -28,6 +30,7 @@
         display: inline-block;
         width: 50px;
         padding: 10px;
+        color: white;
 
     }
 
@@ -52,11 +55,18 @@
 }
 
 @media (min-width: 481px) and (max-width: 780px){
+    
 
     .nav-boton{
         display: flex;
         justify-content: flex-end;
+        color: white;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
     } 
+
+
     .navbar-nav{
         display: none;
     }
