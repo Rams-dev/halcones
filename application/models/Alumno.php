@@ -66,7 +66,7 @@ class Alumno extends CI_model{
             'apellido_m'  => $formData['am'],
             'matricula'  => $formData['matricula'],
             'contrasena'  => $formData['contrasena']
-    );
+        );
     
     $this->db->where('id', $formData['id']);
     $query = $this->db->update('usuarios', $data);
@@ -75,8 +75,22 @@ class Alumno extends CI_model{
     }else{
         return false;
     }
+    }
+
+    public function exist($id){
+        $sql = $this->db->get_where('usuarios',array('id' => $id));
+        if($sql){
+            return $sql->row();
+        }else{
+            return false;
+        }
 
 
+    }
+
+    public function restorePassword($idAlumno, $maticula){
+        $this->db->where('id',$idAlumno);
+        $this->db->update('usuarios', array('contrasena' => $maticula));
     }
 
 

@@ -14,7 +14,7 @@
           <button type="button" onclick="eliminarTutoria(<?=$tutoria['id'];?>)" class="close mr-3 mt-2" data-toggle="tooltip" data-placement="top" title="Eliminar  tutoria" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <div class="jumbotron p-2 mb-2 bg-light">
+          <div class="jumbotron p-2 mb-2 ">
             <h3 class="titulo-tutoria text-success"><?= $tutoria['nombre']; ?></h3>
             <p class="text-dark">Tutor: <span class="font-weight-lighter text-dark"><?= $tutoria['encargado'];?></span></p>
               <hr class="my-3">

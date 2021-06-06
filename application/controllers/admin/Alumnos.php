@@ -83,4 +83,17 @@ class Alumnos extends CI_Controller {
 
     }
 
+    public function restorePassword(){
+        $post = $this->input->post();
+        if($alumno = $this->Alumno->exist($post['id']) ){
+            $this->Alumno->restorePassword($post['id'], $alumno->matricula);
+            echo json_encode(array("mensaje"=> "Contraseña restaurada"));
+        }else{
+            echo json_encode(array("fail"=> "El alumno no existe"));
+        }
+
+        // var_dump($post);
+
+    }
+
 }

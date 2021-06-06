@@ -23,8 +23,14 @@
             function cargar_targeton() {
                 $targeton = $this->input->post('targeton');
                 
-                $data['datos']=$this->Tutorias->getTargetones($this->session->userdata('id'));
-              
+                // $data['datos']=$this->Tutorias->getTargetones($this->session->userdata('id'));
+                $data = $this->Tutorias->getTargetonByid($this->session->userdata('id'));
+                if($data != ""){
+                    foreach($data as $doc){
+                        unlink('assets/pdf/targetones/'.$doc['nombre']);
+                        $this->Tutorias->eliminarTargetones($doc['alumno_id']);
+                    }
+                }
                 $config['upload_path'] = "assets/pdf/targetones";
                 $config['allowed_types'] = "*";        
                 $this->load->library('upload', $config);

@@ -6,6 +6,10 @@ body{
    
 }
 
+.btn{
+    opacity: 1;
+}
+
 .jumbotron p{
     font-size: 14px!important;
     margin: 0px;
@@ -70,6 +74,29 @@ body{
     color: wheat;
     text-align: center;
     font-size: 18px;
+}
+
+.card{
+    min-height: 400px;
+}
+
+.content-target{
+    position: relative;
+    display: flex;
+}
+
+.btn-download{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    right: 35%;
+    
+}
+
+.img-download-targeton{
+    width: 150px;
+    margin: auto;
+    height: 200px;
 }
 
 @media (max-width: 480px){
@@ -157,14 +184,3 @@ body{
     }
 }
 
-@media (min-width: 781px) and (max-width: 1024px){
-
-    
-    .table{
-        width: 100%;
-        overflow-x: auto;
-        box-sizing: border-box;
-    }
-
-
-}

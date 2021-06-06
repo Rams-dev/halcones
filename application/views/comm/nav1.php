@@ -1,9 +1,6 @@
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
     <div class="nav-boton">
-      <div class="text-white">
-        <i class="fas fa-bars text-white" id="menu"></i>
-
-      </div>
+        <i class="fa fa-bars " id="menu"></i>
     </div>
       <div class="container">
       <ul class="navbar-nav mr-auto">

@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="text-center m-0">Tutorias</h1>
     <?php
-    // var_dump($tutorias);
+    //  var_dump($tutorias);
       if($status){
         echo '<div class="alert alert-primary" role="alert">
         <h1 class="text-center"> ¡Ya has sido liberado!</h1>

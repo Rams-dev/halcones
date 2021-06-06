@@ -13,8 +13,8 @@
             <input type="text" class="form-control col-md-3 rounded-pill busquedad" placeholder="buscar..." id="busquedad">
             <a href="<?= base_url('admin/pdfTutoria/descargarAlumnosTutoria')?>" class="btn btn-default btn-sm " target="_blank">Imprimir pdf</a>
             </div>
-            <div class="table col-lg-12 p-0" id='tableAlumnos'>
-        <table class="table table-bordered" id="tabla">
+            <div class="table p-0" id='tableAlumnos'>
+        <table class="table table-bordered table-responsive" id="tabla">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
@@ -29,6 +29,7 @@
                 <th scope="col">Estado</th>
                 <th scope="col">Eliminar</th>
                 <th scope="col">Targeton</th>
+                <th scope="col">restaurar contraseña</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,18 +54,19 @@
                 <td><?= $alumno['encargado'];?></td>
                 <td>
                 <?php if(array_search($alumno['id'],$alumnosliberados)){?>   
-                <button class="btn btn-success" type="button"  >Liberado</button></td>
+                <button class="btn btn-success btn-sm" type="button"  >Liberado</button></td>
                 <?php }else{?>
-                <button class="btn btn-info" type="button" id="liberar" onclick="liberar('<?= $alumno['id'];?>')">Liberar</button>
+                <button class="btn btn-info btn-sm" type="button" id="liberar" onclick="liberar('<?= $alumno['id'];?>')">Liberar</button>
                 <?php }?>
                 </td>
 
-                <td><button class="btn btn-danger" onclick="eliminar('<?= $alumno['id'];?>')">Eliminar</button></td>
+                <td><button class="btn btn-danger btn-sm" onclick="eliminar('<?= $alumno['id'];?>')">Eliminar</button></td>
                 <?php if(isset($alumno["0"])){?>
-                <td><a target="_blank" class="btn btn-success btn-large" href="<?= base_url('assets/pdf/targetones/'.$alumno['0'])?>">Entregado</a></td>
+                <td><a target="_blank" class="btn btn-success btn-sm" href="<?= base_url('assets/pdf/targetones/'.$alumno['0'])?>">Entregado</a></td>
                 <?php }else{?>
-                <td><button class="btn btn-default btn-large"> Sin entregar</button></td>                
+                <td><button class="btn btn-default btn-sm"> Sin entregar</button></td>                
                 <?php }?>
+                <td><button class="btn btn-default" onclick="restorePassword(<?= $alumno['id'];?>)"><i class="fa fa-window-restore"></i></button></td>
                 </tr>
                 <?php endforeach;?>
             </tbody>
@@ -137,7 +139,24 @@
 
         });
 
+        
     }
+
+    function restorePassword(id){
+            $.ajax({
+                url:'alumnos/restorePassword',
+                data:{id},
+                type:'post'
+            })
+            .done(function(res){
+                let response = JSON.parse(res)
+                alertify.success(response.mensaje)
+            })
+            .fail(function(err){
+                alertify.error(err)
+            })
+        }
+
 
 
 </script>

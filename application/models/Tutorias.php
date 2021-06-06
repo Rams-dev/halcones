@@ -196,6 +196,13 @@ public function deleteTutoria($tutoria_id){
 }
 
 
+public function getTargetonByid($id){
+  $sql = $this->db->get_where('targetones', array('alumno_id' => $id));
+  return $sql->result_array();
+
+}
+
+
 /**++++++++++ verificar el estado del alumno */
 
 public function estado_alumno(){
