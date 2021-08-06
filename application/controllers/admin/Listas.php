@@ -14,11 +14,11 @@ class Listas extends CI_Controller {
             "ag" => "AGRICULTURA SUSTENTABLE Y PROTEGIDA",
             "de" => "DESARROLLO DE NEGOCIOS",
             "dmi" => "DISEÑO Y MODA INDUSTRIAL",
-            "er" => "ENERGIAS RENOVABLES",
-            "ga" => "GASTRONOMIA",
-            "me" => "MECATRONICA",
+            "er" => "ENERGÍAS RENOVABLES",
+            "ga" => "GASTRONOMÍA",
+            "me" => "MECATRÓNICA",
             "pa" => "PROCESOS ALIMENTARIOS",
-            "ti" => "TECNOLOGIAS DE LA INFORMCION Y COMUNICACION",
+            "ti" => "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
         );
         $data['carreras'] = $carreras;
         $this->load->view("comm/head");

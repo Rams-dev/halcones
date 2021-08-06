@@ -15,6 +15,7 @@
 				$this->load->view('comm/head');
 				$this->load->view('comm/nav2',$data);
 				if($this->session->userdata('rango') == '2'){
+					
 					redirect('profesores/listas');
 					// $this->load->view('profesores/listas',$data);
 				}else{

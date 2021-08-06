@@ -6,11 +6,11 @@
   <div class="container">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item m-0">
-        <a class="navbar-brand px-4 nav-link <?= $this->uri->segment(2) == 'dashboarduser' ? 'active bg-success' : '';?>" href="<?= base_url('users/dashboarduser');?>"><span class="fa fa-home"></span> Inicio</a>  
+        <a class="navbar-brand px-4 nav-link <?= $this->uri->segment(2) == 'dashboarduser' ? 'active bg-success' : '';?>" href="<?= base_url('users/dashboarduser');?>"><span class="fa fa-home"></span> Inicio</a>
       </li>
-      <li class="nav-item m-0">
-        <a class="navbar-brand px-4 nav-link <?= $this->uri->segment(2) == 'targeton' ? 'active bg-success' : '';?>" href="<?= base_url('users/targeton');?>"><span class="fa fa-address-card"></span> targeton</a>  
-      </li>
+      <!-- <li class="nav-item m-0">
+        <a class="navbar-brand px-4 nav-link <?= $this->uri->segment(2) == 'targeton' ? 'active bg-success' : '';?>" href="<?= base_url('users/targeton');?>"><span class="fa fa-address-card"></span> targeton</a>
+      </li> -->
       <?php
      if($this->session->userdata('rango') == "2"){?>
            <li class="nav-item ">
