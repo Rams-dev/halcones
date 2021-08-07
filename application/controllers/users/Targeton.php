@@ -12,7 +12,7 @@
                 if($this->session->userdata('is_logged')){
                     $data['tutorias'] = $this->Tutorias->showTutorias();	
                     $this->load->view('comm/head');
-                    $this->load->view('comm/nav2',$data);
+                    $this->load->view('comm/nav1',$data);
                     $this->load->view('users/targeton',$data);
                     $this->load->view('comm/foot');
                     }else{

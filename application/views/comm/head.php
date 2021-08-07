@@ -3,11 +3,11 @@
 <head>
 
 <link rel="shortcut icon" href="<?= base_url('assets/img/logo.jpg')?>" type="image/x-icon" />
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 <link rel="stylesheet" href="<?= base_url('assets/dropify/dist/css/dropify.css')?>">
 <!-- <link rel="stylesheet" href="<?= base_url('assets/dropify/dist/fonts/*')?>"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+<script src="https://kit.fontawesome.com/03e7806b0f.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorias utvco</title>

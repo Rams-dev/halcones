@@ -67,7 +67,7 @@
 				$data['carreras'] = $carreras;
 
 				$this->load->view('comm/head');
-				$this->load->view('comm/nav2');
+				$this->load->view('comm/nav1');
 				$this->load->view('profesores/listas',$data);
 				$this->load->view('comm/foot');
 			}else{
@@ -82,7 +82,7 @@
 				$data['listas'] = $this->Lista->ObtenerListasPorCarrera($value);
 				$data['carrera'] = $value;
 				$this->load->view("comm/head");
-				$this->load->view("comm/nav2");
+				$this->load->view("comm/nav1");
 				$this->load->view('profesores/detalles',$data);
 				$this->load->view("comm/foot");
 

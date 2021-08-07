@@ -1,39 +1,68 @@
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
-    <div class="nav-boton">
-        <i class="fa fa-bars " id="menu"></i>
-    </div>
-      <div class="container">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item m-0">
-          <a class="navbar-brand px-4 nav-link <?= $this->uri->segment(2) == 'dashboard' ? 'active bg-success' : '';?>" href="<?= base_url('admin/dashboard');?>"> <i class="fa fa-home"></i> inicio</a>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="nav-boton">
+    <i class="fa fa-bars " id="menu"></i>
+  </div>
+  <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <?php if ($this->session->userdata('rango')  == '1') { ?>
+        <li class="nav-li">
+          <a class="nav-a <?= $this->uri->segment(2) == 'dashboard' ? 'active-nav-a' : ''; ?>" href="<?= base_url('admin/dashboard'); ?>"> <i class="fa fa-home"></i> inicio</a>
         </li>
-        <li class="nav-item ">
-          <a class="navbar-brand px-4 nav-link  <?= $this->uri->segment(2) == 'agregartutoria' ? 'active bg-success' : '';?>" href="<?= base_url('admin/agregartutoria')?>"><i class="fa fa-plus-circle"></i> Agregar tutoría</a>
+        <li class="nav-li ">
+          <a class="nav-a  <?= $this->uri->segment(2) == 'agregartutoria' ? 'active-nav-a' : ''; ?>" href="<?= base_url('admin/agregartutoria') ?>"><i class="fa fa-plus"></i> Agregar tutoría</a>
         </li>
-        <li class="nav-item">
-          <a id="alumnos" class="navbar-brand px-4 nav-link <?= $this->uri->segment(2) == 'alumnos' ? 'active bg-success' : '';?>" href="<?= base_url('admin/alumnos')?>"><i class="fa fa-users"></i> Alumnos</a>
+        <li class="nav-li">
+          <a id="alumnos" class="nav-a <?= $this->uri->segment(2) == 'alumnos' ? 'active-nav-a' : ''; ?>" href="<?= base_url('admin/alumnos') ?>"><i class="fa fa-users"></i> Alumnos</a>
         </li>
-        <li class="nav-item ">
-          <a id="liberaciones" class="navbar-brand px-4 nav-link  <?= $this->uri->segment(2) == 'listas' ? 'active bg-success' : '';?>" href="<?= base_url('admin/listas')?>"> <i class="fa fa-users"></i>
-          Listas</a>
+        <li class="nav-li ">
+          <a id="liberaciones" class="nav-a  <?= $this->uri->segment(2) == 'listas' ? 'active-nav-a' : ''; ?>" href="<?= base_url('admin/listas') ?>"><i class="fas fa-file-pdf"></i> Listas</a>
         </li>
-      </ul>
+    </ul>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item ml-3">
-          <a id="" class="navbar-brand nav-link px-4 <?= $this->uri->segment(2) == 'cuenta' ? 'active bg-success' : '';?>" href="<?=base_url('admin/cuenta/')?>"><?php echo $this->session->userdata('nombre') . ' '. $this->session->userdata('apellido_p');?></a> 
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-li ">
+        <a class="nav-a <?= $this->uri->segment(2) == 'cuenta' ? 'active-nav-a' : ''; ?>" href="<?= base_url('admin/cuenta/') ?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('nombre') . ' ' . $this->session->userdata('apellido_p'); ?></a>
+      </li>
+      <li class="nav-li ">
+        <a id="session" class="nav-a " href="<?php echo base_url('login/logout'); ?>"><i class="fa fa-sign-out-alt"></i> Salir</a>
+      </li>
+    <?php } ?>
+
+
+
+    <?php if ($this->session->userdata('rango')  == '0' || $this->session->userdata('rango')  == '2') { ?>
+      <li class="nav-li m-0">
+        <a class="nav-a <?= $this->uri->segment(2) == 'dashboarduser' ? 'active-nav-a' : ''; ?>" href="<?= base_url('users/dashboarduser'); ?>"><i class="fa fa-home"></i> Inicio</a>
+      </li>
+      <!-- <li class="nav-li m-0">
+        <a class="nav-a <?= $this->uri->segment(2) == 'targeton' ? 'active-nav-a' : ''; ?>" href="<?= base_url('users/targeton'); ?>"><i class="fa fa-address-card"></i> targeton</a>
+      </li> -->
+      <?php
+      if ($this->session->userdata('rango') == "2") { ?>
+        <li class="nav-li ">
+          <a class="nav-a <?= $this->uri->segment(2) == 'listas' ? 'active-nav-a' : ''; ?>" href="<?= base_url('profesores/listas'); ?>"><i class="fas fa-file-pdf"></i> Listas</a>
         </li>
-        <li class="nav-item ml-3">
-          <a id = "session" class="navbar-brand nav-link px-4 " href="<?php echo base_url('login/logout');?>"><i class="fa fa-power-off"></i> Cerrar session</a>
-        </li>
-      </ul>
-      </div>
-    </nav>  
-<script >
-$(document).ready(function(){
-  $('#menu').click(function(){
-    $('.navbar-nav').slideToggle();
-  });
-})
-</script>
- <script src="<?=base_url('assets/js/auth/targeton.js')?>"></script>
+      <?php } ?>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-li">
+        <a class="nav-a  <?= $this->uri->segment(2) == 'cuenta' ? 'active-nav-a' : ''; ?> " href="<?= base_url('users/cuenta/') ?>"><i class="fa fa-user"> </i> <?php echo $this->session->userdata('nombre') . ' ' . $this->session->userdata('apellido_p'); ?></a>
+      </li>
+      <li class="nav-li ">
+        <a class="nav-a " href="<?= base_url('login/logout'); ?>"><i class="fa fa-sign-out-alt"></i> Salir</a>
+      </li>
+
+
+    <?php } ?>
+
+    </ul>
+  </div>
+</nav>
+     <script>
+       $(document).ready(function() {
+         $('#menu').click(function() {
+           $('.navbar-nav').slideToggle();
+         });
+       })
+     </script>
+     <script src="<?= base_url('assets/js/auth/targeton.js') ?>"></script>

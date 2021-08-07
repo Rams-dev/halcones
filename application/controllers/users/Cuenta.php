@@ -12,7 +12,7 @@ class Cuenta extends CI_Controller {
         if($this->session->userdata('is_logged')){
            $data['datos'] = $this->Alumno->get_datos_user();
            $this->load->view('comm/head');
-           $this->load->view('comm/nav2');
+           $this->load->view('comm/nav1');
            $this->load->view('users/cuenta',$data);
            $this->load->view('comm/foot');
            }else{

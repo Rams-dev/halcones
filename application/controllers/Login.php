@@ -42,7 +42,7 @@ class Login extends CI_Controller {
 			);
 			if($data['rango'] == '0' || $data['rango'] == '2'){
 			$this->session->set_userdata($data);
-			$this->session->set_flashdata('mensaje', 'Bienvenido a mi fondita ' . $data['nombre']);
+			$this->session->set_flashdata('mensaje', 'Bienvenido ' . $data['nombre']);
 			echo json_encode(array("url" => base_url('users/dashboarduser')));
 			}elseif($data['rango'] == '1'){
 				$this->session->set_userdata($data);
