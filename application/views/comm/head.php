@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 
-<link rel="shortcut icon" href="<?= base_url('assets/img/logo.jpg')?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?= base_url('assets/img/logo1.jpg')?>" type="image/x-icon" />
 
 <link rel="stylesheet" href="<?= base_url('assets/dropify/dist/css/dropify.css')?>">
 <!-- <link rel="stylesheet" href="<?= base_url('assets/dropify/dist/fonts/*')?>"> -->

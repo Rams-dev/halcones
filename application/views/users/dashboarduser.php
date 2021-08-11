@@ -1,7 +1,6 @@
 <div class="container">
-  <h1 class="text-center m-0">Tutorias</h1>
+  <h1 class="text-center m-0">Tutorías</h1>
     <?php
-    var_dump($espaciosRestantes);
       if($status){?>
         <div class="alert alert-primary" role="alert">
         <h1 class="text-center"> ¡Ya has sido liberado!</h1>
@@ -12,7 +11,7 @@
         <div class="jumbotron jumbotron-fluid bg-info text-white text-center">
         <div class="container">
           <h1 class="display-4">Hola!</h1>
-          <p class="lead"><p>Aún no se registran las tutorías, espera algunos dias más .</p>
+          <p class="lead"><p>Aún no se registran las tutorías, espera algunos días más .</p>
         </div>
       </div>
       <?php } ?>
@@ -29,20 +28,28 @@
               <div class="content-tutoria">
                 <p class="text-dark"><i class="fa fa-user"></i> <?= $tutoria['encargado'];?></p>              
                   <p class="horarios-title">horarios</p>
-                  <?= $tutoria['lunes'] != ' - ' ? ' <p class="horario"> Lunes: '.$tutoria['lunes']. ' hrs </p>' : ""?>
-                  <?= $tutoria['martes'] != ' - ' ? '<p class="horario"> Martes: '.$tutoria['martes']. ' hrs </p>' : ""?>
-                  <?= $tutoria['miercoles'] != ' - ' ? '<p class="horario"> Miercoles: '.$tutoria['miercoles']. ' hrs </p>' : ""?>
-                  <?= $tutoria['jueves'] != ' - ' ? '<p class="horario"> Jueves: '.$tutoria['jueves']. ' hrs </p>' : ""?>
-                  <?= $tutoria['viernes'] != ' - ' ? '<p class="horario"> Viernes: '.$tutoria['viernes']. ' hrs </p>' : ""?>
-                  <?= $tutoria['sabado'] != ' - ' ? '<p class="horario"> Sabado: '.$tutoria['sabado']. ' hrs </p>' : ""?>
-                  <?php if(!$isSignedUp){?>
-                      <button class="btn btn-success btn-lg btn-block btn-tutorias" onclick="Inscribirme(<?= $tutoria['id'] ?>)">Inscribirme</button>
-                  <?php }?>
-
-                <!-- <a href="<?= base_url('users/dashboarduser/detalles/'. $tutoria['id'])?>"  value="ver horarios" class="btn btn-success btn-lg btn-block btn-tutorias">Inscribirme</a> -->
+                  <?= $tutoria['lunes'] != ' - ' ? ' <p class="horario"> <span>Lunes:</span> <span>'.$tutoria['lunes']. ' hrs </span> </p>' : ""?>
+                  <?= $tutoria['martes'] != ' - ' ? '<p class="horario"> <span>Martes:</span> <span> '.$tutoria['martes']. ' hrs </span></p>' : ""?>
+                  <?= $tutoria['miercoles'] != ' - ' ? '<p class="horario"> <span>Miercoles:</span> <span> '.$tutoria['miercoles']. ' </span> hrs </p>' : ""?>
+                  <?= $tutoria['jueves'] != ' - ' ? '<p class="horario"> <span>Jueves:</span> <span> '.$tutoria['jueves']. ' hrs </span></p>' : ""?>
+                  <?= $tutoria['viernes'] != ' - ' ? '<p class="horario"> <span>Viernes:</span> <span> '.$tutoria['viernes']. ' hrs </span></p>' : ""?>
+                  <?= $tutoria['sabado'] != ' - ' ? '<p class="horario"> <span>Sabado:</span> <span> '.$tutoria['sabado']. ' hrs </span></p>' : ""?>
               </div>
 
+                  <?php if(!$isSignedUp){
+                    if(isset($tutoria['numeroInscritos'])){
+                        if($tutoria['limite'] == $tutoria['numeroInscritos']){?>
+                      <button class="btn btn-danger btn-lg btn-block btn-tutorias" disabled>Tutoria LLena</button>
+                    <?php } else{?>
+                      <button class="btn btn-success btn-lg btn-block btn-tutorias" onclick="Inscribirme(<?= $tutoria['id'] ?>)">Inscribirme</button>
+                    <?php }}else{?>
+                      <button class="btn btn-success btn-lg btn-block btn-tutorias" onclick="Inscribirme(<?= $tutoria['id'] ?>)">Inscribirme</button>
+                    <?php } } ?>
 
+                    <?php if($tutoriaUser != null and $tutoriaUser->id == $tutoria['id'] ){?>
+                      <p class="message-inscrito-tutorias"> Inscrito</p>
+
+                    <?php }?>
            </div>
         </div>
         <?php endforeach;?>
@@ -59,7 +66,7 @@
       button.classList.add('btn-danger')
     });
   }
-  
+
   function Inscribirme(tutoria_id){
     console.log(tutoria_id)
     disableButtons()

@@ -52,7 +52,7 @@
 
     </div>
 <div class="table" id="table">
-            <table class="table table-bordered">
+            <table class="table table-responsive table-bordered">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>

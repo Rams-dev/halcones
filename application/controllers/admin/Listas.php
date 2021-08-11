@@ -2,15 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Listas extends CI_Controller {
+
+    private $carreras;
     public function __Construct(){
         parent::__Construct();
         $this->load->model(array('Tutorias','Alumno','Lista'));
         $this->load->helper(array('rules'));
-        
-    }
-	public function index()
-    {
-        $carreras = array(
+        $this->carreras = array(
             "ag" => "AGRICULTURA SUSTENTABLE Y PROTEGIDA",
             "de" => "DESARROLLO DE NEGOCIOS",
             "dmi" => "DISEÑO Y MODA INDUSTRIAL",
@@ -20,7 +18,12 @@ class Listas extends CI_Controller {
             "pa" => "PROCESOS ALIMENTARIOS",
             "ti" => "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
         );
-        $data['carreras'] = $carreras;
+        
+    }
+	public function index()
+    {
+        
+        $data['carreras'] = $this->carreras;
         $this->load->view("comm/head");
         $this->load->view("comm/nav1");
         $this->load->view('listas/listas',$data);
@@ -81,9 +84,10 @@ class Listas extends CI_Controller {
     }
 
     public function carrera($carrera){
-        $value = str_replace("_", " ", $carrera);
+        $value = $this->carreras[$carrera];
         $data['listas'] = $this->Lista->ObtenerListasPorCarrera($value);
         $data['carrera'] = $value;
+        $data['id_carrera'] = $carrera;
         $this->load->view("comm/head");
         $this->load->view("comm/nav1");
         $this->load->view('admin/listas/detalles',$data);
@@ -109,6 +113,18 @@ class Listas extends CI_Controller {
         }
 
 
+    }
+
+    public function eliminarListas(){
+        $data = $this->input->post();
+        $carrera = $this->carreras[$data['carrera']];
+        $lists = $this->Lista->getListsByCarrer($carrera);
+        if(count($lists) > 0){
+            foreach ($lists as $list ) {
+                $this->Lista->deleteLista($list["id"]);
+            }
+            echo json_encode(array('mensaje' => "listas eliminadas"));
+        }
     }
 
 }

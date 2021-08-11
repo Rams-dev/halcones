@@ -47,14 +47,14 @@
                 'label' => 'Matricula',
                 'rules' => 'required|trim',
                 'errors' => array(
-                    'required' => 'el campo %s es requerido' ),
+                    'required' => 'El campo %s es requerido' ),
         ),
         array(
                 'field' => 'password',
                 'label' => 'contraseña',
                 'rules' => 'required|trim',
                 'errors' => array(
-                    'required' => 'el campo %s es requerido'),    
+                    'required' => 'El campo %s es requerido'),    
         ),
     );
 
@@ -128,5 +128,57 @@
                     'required' => 'el campo %s es requerido'),    
         ),
     );
+
+
+
+    function getRegistroProfesoresRules(){
+        return array(
+            array(
+                    'field' => 'nombre',
+                    'label' => 'nombre',
+                    'rules' => 'required|trim',
+                    'errors' => array(
+                        'required' => 'el campo %s es requerido' ),
+            ),
+            array(
+                    'field' => 'apellido_p',
+                    'label' => 'Primer apellido',
+                    'rules' => 'required|trim',
+                    'errors' => array(
+                        'required' => 'el campo %s es requerido'),    
+            ),
+            array(
+                    'field' => 'apellido_m',
+                    'label' => 'Segundo apellido',
+                    'rules' => 'required|trim',
+                    'errors' => array(
+                        'required' => 'el campo %s es requerido'),    
+            ),
+            array(
+                    'field' => 'carrera',
+                    'label' => 'Carrera',
+                    'rules' => 'required|trim',
+                    'errors' => array(
+                        'required' => 'el campo %s es requerido'),    
+            ),
+            array(
+                    'field' => 'grupo',
+                    'label' => 'Grupo',
+                    'rules' => 'required|trim|min_length[4]|max_length[6]',
+                    'errors' => array(
+                        'required' => 'el campo %s es requerido',
+                        'min_length' => 'el campo %s es debe tener minimo 4 caracteres',
+                        'max_length' => 'el campo %s es debe tener maximo 6 caracteres'
+                    ),    
+            ),
+            array(
+                    'field' => 'contrasena',
+                    'label' => 'Contraseña',
+                    'rules' => 'required|trim',
+                    'errors' => array(
+                        'required' => 'el campo %s es requerido'),    
+            ),
+        );
+    }
 
  }

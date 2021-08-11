@@ -84,15 +84,6 @@ class Tutorias extends CI_model
     return $sql->result_array();
   }
 
-  public function obtenerEspaciosRestantesDeTutoria(){
-    $this->db->select('tutorias.id, tutorias.nombre');
-    $this->db->from('inscripciones');
-    $this->db->join('tutorias','inscripciones.tutoria_id = tutorias.id');
-    $this->db->where('limite', '!=', 'null');
-    $sql = $this->db->get();
-    return $sql->result_array();
-  }
-
   public function getAlumnos()
   {
     $this->db->select('usuarios.id, usuarios.nombre, usuarios.apellido_p, usuarios.apellido_m, carrera, matricula, grupo, telefono');
@@ -116,6 +107,13 @@ class Tutorias extends CI_model
     return $sql->result_array();
   }
 
+  public function getNumeroDeAlumnosPorTutoria(){
+    $this->db->select('count(id) as numeroInscritos, tutoria_id');
+    $this->db->from('inscripciones');
+    $this->db->group_by('tutoria_id');
+    $sql = $this->db->get();
+    return $sql->result_array();
+  }
 
 
   public function eliminarTargetones($alumno_id)
@@ -154,9 +152,10 @@ class Tutorias extends CI_model
 
   public function get_tutoriauser()
   {
-    $sql = $this->db->get('tutorias');
+    $this->db->select('tutorias.nombre, tutorias.id');
     $this->db->join('inscripciones','tutorias.id = inscripciones.tutoria_id');
     $this->db->where('inscripciones.alumno_id', $this->session->userdata('id'));
+    $sql = $this->db->get('tutorias');
     if($sql) {
       return $sql->row();
     } else {

@@ -11,11 +11,11 @@
                     <option value="AGRICULTURA SUSTENTABLE Y PROTEGIDA">AGRICULTURA SUSTENTABLE Y PROTEGIDA</option>
                     <option value="DESARROLLO DE NEGOCIOS">DESARROLLO DE NEGOCIOS</option>
                     <option value="DISEÑO Y MODA INDUSTRIAL">DISEÑO Y MODA INDUSTRIAL</option>
-                    <option value="ENERGIAS RENOVABLES">ENERGÍAS RENOVABLES</option>
-                    <option value="GASTRONOMIA">GASTRONOMÍA</option>
+                    <option value="ENERGíAS RENOVABLES">ENERGÍAS RENOVABLES</option>
+                    <option value="GASTRONOMÍA">GASTRONOMÍA</option>
                     <option value="MECATRONICA">MECATRÓNICA</option>
                     <option value="PROCESOS ALIMENTARIOS">PROCESOS ALIMENTARIOS</option>
-                    <option value="TECNOLOGIAS DE LA INFORMCION Y COMUNICACION">TECNOLOGÍAS DE LA INFORMCIÓN Y COMUNICACIÓN</option>
+                    <option value="TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN">TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN</option>
                     <?php }?>
 
                     </select>
@@ -24,7 +24,7 @@
                 <label for="Listas">Listas</label>
                 <input type="file" name="listas[]" id="listas" class="dropify" multiple>
             </div>
-            <button type="submit" class="btn btn-block btn-primary my-4">Subir</button>
+            <button type="submit" class="btn btn-block btn-primary my-4">Subir <img src="<?= base_url('assets/SVG/svg-loaders/oval.svg')?>" alt="" class="loaderButton" id="loaderButton"></button>
         </form>
         </div>
     </div>
@@ -37,7 +37,10 @@
 
 $('#form-list').submit(function(e){
     e.preventDefault()
+    document.getElementById('loaderButton').style.display = 'inline-block'
+
      var formdata = new FormData($("#form-list")[0]);
+     
       $.ajax({
           url:'subirListas',
           type:$("#form-list").attr("method"),
@@ -58,11 +61,15 @@ $('#form-list').submit(function(e){
                   }, 2500);
             }
             if(res.error){
-              alertify.error(error)
+              alertify.error("error")
             }
         })
         .fail(function(err){
         alertify.error(err)
+      })
+      .always(function(res){
+        document.getElementById('loaderButton').style.display = 'none'
+
       })
   })
 

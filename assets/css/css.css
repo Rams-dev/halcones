@@ -33,24 +33,32 @@ body{
 
 .horario{
     font-size: 12px;
-    margin: 0px;
+    margin: 2px!important;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    grid-gap: 2px;
+    border: 1px solid rgba(55, 230, 78, 0.301);
+    padding: 2px;
+    border-radius: 5px;
+    background: rgba(55, 230, 78, 0.100)
 }
 
 .btn{
     opacity: 1;
 }
 
-.close{
+.head-card{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
-
 
 
 .titulo-tutoria{
     color: var(--green);
-    margin-top: 0px;
+    margin: 0px;
     text-align: center;
+    padding: 5px;
 }
 
 .btn-delete{
@@ -99,6 +107,24 @@ body{
     
 }
 
+
+a{
+    text-decoration: none;
+    color: var(--black) ;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.card-list-carrer-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
 .img-pdf{
     max-width: 100%;
 }
@@ -108,8 +134,8 @@ body{
     bottom: 50%;
     left: 5px;
     right: 5px;
-    background: black;
-    color: wheat;
+    background: var(--black);
+    color: var(--white);
     text-align: center;
     font-size: 18px;
 }
@@ -122,18 +148,34 @@ body{
 }
 
 .content-tutoria{
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
+.loaderButton{
+    width: 20px;
+    margin-left: 10px;
+    display: none;
+}
 
+.message-inscrito-tutorias{
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    box-sizing: border-box;
+    left: 0%;
+    color: var(--white)!important;
+    background: var(--black);
+    text-align: center;
+    margin: 0px;
+    padding: 10px 0px;
+
+}
 
 .btn-tutorias{
     position: absolute;
     bottom: 5px;
     box-sizing: border-box;
-    left: 0px;
-  
-    
+    left: 0px; 
 }
 
 .content-target{
@@ -179,31 +221,66 @@ body{
         width: 100%;
     }
 
+    .card-pdf{
+        height: 100px;
+    }
+
+    .list-name{
+        background: var(--black);
+        font-size: 14px;
+        position: absolute;
+        bottom: 5px;
+    }
+
+    .img-pdf{
+        width: 100%;
+        height: 100%;
+
+    }
+
     /*Login  */
 
     .log{
         margin-bottom: auto;
     }
-
   
     .titulo-tutoria{
-        margin-top: 0px;
+        margin: 0px!important;
     }
-
 
     /* alumnos */
     .table{
         width: 100%;
         overflow-x: scroll;
     }
+    h1{
+        font-size: 20px!important;
+
+    }
+
 }
 @media (min-width: 481px) and (max-width: 780px){
 
     h1{
-        font-size: 32px !important;
+        font-size: 24px!important;
         margin-bottom: revert;
     }
+
+    .titulo-tutoria{
+        margin-top: 0px;
+    }
     /*Login  */
+
+    .card-pdf{
+        height: 150px;
+    }
+
+    .list-name{
+        background: var(--black);
+        font-size: 16px;
+        position: absolute;
+        bottom: 5px;
+    }
 
     .log{
         margin-bottom: auto;
@@ -216,11 +293,8 @@ body{
     }
 
     .jumbotron{
-        border-radius: 15px; 
-             
+        border-radius: 15px;     
     }
-    
-
     
     .jumbotron p {
         font-size: 14px ;

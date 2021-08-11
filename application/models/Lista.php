@@ -41,4 +41,10 @@ class Lista extends CI_model{
             return false;
         }
     }
+
+    public function getListsByCarrer($carrer){
+        $sql = $this->db->get_where('listas', array('carrera' => $carrer));
+        return $sql->result_array();
+
+    }
 }

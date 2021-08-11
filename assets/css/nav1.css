@@ -5,6 +5,9 @@
 
 }
 
+.navbar-nav{
+    display: block;
+}
 
 .nav-boton{
     display: none;
@@ -49,9 +52,21 @@
         width: 70px;
         font-size: 35px;
     } 
+
+    
     .navbar-nav{
         display: none;
     }
+
+    .nav-li{
+        color: var(--white);
+        padding: 0px;
+    }
+
+    .nav-a{
+        display: block;
+    }
+    
 
     .nav-boton img{
         display: inline-block;
@@ -88,10 +103,14 @@
         display: flex;
         justify-content: flex-end;
         color: white;
-        width: 60px;
-        height: 60px;
-        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
     } 
+
+    .nav-a{
+        display: block;
+        }
 
 
     .navbar-nav{
@@ -100,7 +119,6 @@
     
     .nav-boton img{
         display: block;
-        /* float: right; */
         width: 55px;
     }
 
@@ -113,7 +131,7 @@
 
     .navbar a{ 
         width: 100%!important;
-        font-size: 20px;
+        font-size: 16px;
         padding: 12px;
         height: auto;
         margin-bottom: 5px;

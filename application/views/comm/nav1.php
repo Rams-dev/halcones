@@ -3,8 +3,8 @@
     <i class="fa fa-bars " id="menu"></i>
   </div>
   <div class="container">
-    <ul class="navbar-nav mr-auto">
-      <?php if ($this->session->userdata('rango')  == '1') { ?>
+    <?php if ($this->session->userdata('rango')  == '1') { ?>
+      <ul class="navbar-nav mr-auto">
         <li class="nav-li">
           <a class="nav-a <?= $this->uri->segment(2) == 'dashboard' ? 'active-nav-a' : ''; ?>" href="<?= base_url('admin/dashboard'); ?>"> <i class="fa fa-home"></i> inicio</a>
         </li>
@@ -26,11 +26,11 @@
       <li class="nav-li ">
         <a id="session" class="nav-a " href="<?php echo base_url('login/logout'); ?>"><i class="fa fa-sign-out-alt"></i> Salir</a>
       </li>
-    <?php } ?>
-
-
+    </ul>
+      <?php } ?>
 
     <?php if ($this->session->userdata('rango')  == '0' || $this->session->userdata('rango')  == '2') { ?>
+      <ul class="navbar-nav mr-auto">
       <li class="nav-li m-0">
         <a class="nav-a <?= $this->uri->segment(2) == 'dashboarduser' ? 'active-nav-a' : ''; ?>" href="<?= base_url('users/dashboarduser'); ?>"><i class="fa fa-home"></i> Inicio</a>
       </li>
@@ -51,12 +51,8 @@
       <li class="nav-li ">
         <a class="nav-a " href="<?= base_url('login/logout'); ?>"><i class="fa fa-sign-out-alt"></i> Salir</a>
       </li>
-
-
-    <?php } ?>
-
     </ul>
-  </div>
+    <?php } ?>
 </nav>
      <script>
        $(document).ready(function() {

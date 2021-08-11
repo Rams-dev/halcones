@@ -10,18 +10,26 @@
 				public function index()
 			{
 				if($this->session->userdata('is_logged')){
-				$data['tutorias'] = $this->Tutorias->showTutorias();	
+				$tutorias = $this->Tutorias->showTutorias();	
 				$data['status'] = $this->Tutorias->estado_alumno();
+				$alumnosPorTutoria = $this->Tutorias->getNumeroDeAlumnosPorTutoria();	
 				$data['isSignedUp'] = $this->Tutorias->isSignedUp($this->session->userdata('id'));
 				$data['tutoriaUser'] = $this->Tutorias->get_tutoriauser();
-				// $data['espaciosRestantes'] = $this->Tutorias->obtenerEspaciosRestantesDeTutoria();
-				
+				if($alumnosPorTutoria != ""){
+				 for($t = 0; $t < count($tutorias); $t++){
+					for($c = 0; $c < count($alumnosPorTutoria); $c++){
+						if($tutorias[$t]['id'] == $alumnosPorTutoria[$c]['tutoria_id'] ){
+							$tutorias[$t]['numeroInscritos'] = $alumnosPorTutoria[$c]['numeroInscritos'];
+						}
+					}
+				 }
+				}		
+				$data['tutorias'] = $tutorias;		
 				$this->load->view('comm/head');
 				$this->load->view('comm/nav1',$data);
 				if($this->session->userdata('rango') == '2'){
 					
 					redirect('profesores/listas');
-					// $this->load->view('profesores/listas',$data);
 				}else{
 
 					$this->load->view('users/dashboarduser',$data);
@@ -33,8 +41,7 @@
 			}
 			
 			public function detalles($id_tutoria){
-				// $data['tutoria'] = $this->Tutorias->showTutoria($id);
-				// $data['titulo']= $name;
+				
 				if(!empty($data['usertutoria'] = $this->Tutorias->get_tutoriauser())){
 				  foreach ($data['usertutoria'] as $key) {
 				  	$id=$key['alumno_id'];

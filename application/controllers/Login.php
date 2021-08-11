@@ -53,9 +53,9 @@ class Login extends CI_Controller {
 	}
 
 	public function registro(){
-                $this->load->view('comm/head');
-                $this->load->view('registro');
-                $this->load->view('comm/foot');
+		$this->load->view('comm/head');
+		$this->load->view('registro');
+		$this->load->view('comm/foot');
             
 	}
 
