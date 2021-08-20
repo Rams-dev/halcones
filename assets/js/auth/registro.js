@@ -8,7 +8,6 @@
 	$('#registroUsuarios').submit(function(ev){
 
 		ev.preventDefault();
-		
 
 			$.ajax({
 			url: 'registrarUsuario',
