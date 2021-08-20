@@ -1,49 +1,40 @@
-(function($){
-	$('#form_login').submit(function(ev){
-		 $('#matricula > input').focus(function(){
-		 	$('#matricula > input').removeClass('is-invalid');
-		 });
+let formLoginInputs = document.querySelectorAll('.form-control')
 
-		 $('#passsword > input').focus(function(){
-		 	$('#password > input').removeClass('is-invalid');
-		 });
-		 
-		$.ajax({
-			url: 'login/validate',
-			datatype: 'JSON',
-			type: 'POST',
-			data: $(this).serialize(),
-			success: function(response){
-				var json = JSON.parse(response);
+formLoginInputs.forEach((input) => {
+	input.addEventListener('click', (e) => {
+		input.classList.remove('is-invalid')
+		document.getElementById('alert').innerHTML = ''
+	})
 
-				window.location.replace(json.url);
+})
 
-			},
-			statusCode: {
-				400: function(xhr){
-					$('#matricula > input').removeClass('is-invalid');
-					$('#password > input').removeClass('is-invalid');
-					var json = JSON.parse(xhr.responseText);
-					if(json.matricula.length != 0){
-						$('#matricula > div').html(json.matricula)
-						$('#matricula > input').addClass('is-invalid');
+$('#form_login').submit(function(ev){
+	ev.preventDefault();
+				
+	$.ajax({
+		url: 'login/validate',
+		datatype: 'JSON',
+		type: 'POST',
+		data: $(this).serialize(),
+		success: function(response){
+			var json = JSON.parse(response);
+			window.location.replace(json.url);
+		},
+		statusCode: {
+			400: function(xhr){
+				let response = JSON.parse(xhr.responseText);
+
+				for(let res in response){
+					if(response[res] != ""){
+						document.querySelector(`#${res}`).querySelector('input').classList.add('is-invalid')
+						document.querySelector(`#${res}`).querySelector('div').innerHTML = response[res]
 					}
-					if(json.password.length != 0){
-						$('#password > div').html(json.password)
-						$('#password > input').addClass('is-invalid');
-					}
-				},
-				401: function(xhr){
-					var json = JSON.parse(xhr.responseText);
-					console.log(json);
-					$('#alert').html('<div class="alert alert-danger" role="alert"> '+ json.mensaje + '</div>');
 				}
-
+			},
+			401: function(xhr){
+				var json = JSON.parse(xhr.responseText);
+				$('#alert').html('<div class="alert alert-danger" role="alert"> '+ json.mensaje + '</div>');
 			}
-
-		});
-		ev.preventDefault();
-
+		}
 	});
-
-})(jQuery);
+});

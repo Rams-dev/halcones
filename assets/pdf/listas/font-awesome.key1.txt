@@ -1,0 +1,2 @@
+fontawesome --->
+<script src="https://kit.fontawesome.com/03e7806b0f.js" crossorigin="anonymous"></script>

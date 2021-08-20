@@ -13,7 +13,7 @@
             <a href="<?= base_url('admin/pdfTutoria/descargarAlumnosTutoria') ?>" class="btn btn-default btn-sm " target="_blank">Imprimir pdf</a>
         </div>
         <div class="table p-0" id='tableAlumnos'>
-            <table class="table table-bordered" id="tabla">
+            <table class="table table-responsive table-bordered" id="tabla">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>

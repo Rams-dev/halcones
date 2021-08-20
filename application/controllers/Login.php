@@ -42,7 +42,7 @@ class Login extends CI_Controller {
 			);
 			if($data['rango'] == '0' || $data['rango'] == '2'){
 			$this->session->set_userdata($data);
-			$this->session->set_flashdata('mensaje', 'Bienvenido a mi fondita ' . $data['nombre']);
+			$this->session->set_flashdata('mensaje', 'Bienvenido ' . $data['nombre']);
 			echo json_encode(array("url" => base_url('users/dashboarduser')));
 			}elseif($data['rango'] == '1'){
 				$this->session->set_userdata($data);
@@ -53,9 +53,9 @@ class Login extends CI_Controller {
 	}
 
 	public function registro(){
-                $this->load->view('comm/head');
-                $this->load->view('registro');
-                $this->load->view('comm/foot');
+		$this->load->view('comm/head');
+		$this->load->view('registro');
+		$this->load->view('comm/foot');
             
 	}
 

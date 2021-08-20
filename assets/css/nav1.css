@@ -1,15 +1,45 @@
+:root{
+    --white: #ffffff;
+    --black: #000000;
+    --green: rgb(89, 194, 106);
+
+}
+
+.navbar-nav{
+    display: block;
+}
+
 .nav-boton{
     display: none;
 }
-.navbar-brand{
-    color: white!important;
-    font-size: 16px!important;
-    font-family: sans-serif;
 
+.nav-a{
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
 }
 
-.navbar a:hover{
-    background-color: rgb(89, 194, 106);
+.active-nav-a{
+    background: var(--green);
+    border-bottom-width: 3px ;
+    color: var(--white);
+}
+
+.nav-item{
+    margin: auto 5px;
+}
+
+.nav-li{
+    color: var(--white);
+    padding: auto 5px;
+}
+
+.nav-a:hover{
+    list-style: none;
+    text-decoration: none;
+    border-bottom: 3px solid var(--green);
+    color: var(--green);
     color: white;
 }
 
@@ -22,9 +52,21 @@
         width: 70px;
         font-size: 35px;
     } 
+
+    
     .navbar-nav{
         display: none;
     }
+
+    .nav-li{
+        color: var(--white);
+        padding: 0px;
+    }
+
+    .nav-a{
+        display: block;
+    }
+    
 
     .nav-boton img{
         display: inline-block;
@@ -61,10 +103,14 @@
         display: flex;
         justify-content: flex-end;
         color: white;
-        width: 60px;
-        height: 60px;
-        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
     } 
+
+    .nav-a{
+        display: block;
+        }
 
 
     .navbar-nav{
@@ -73,7 +119,6 @@
     
     .nav-boton img{
         display: block;
-        /* float: right; */
         width: 55px;
     }
 
@@ -86,7 +131,7 @@
 
     .navbar a{ 
         width: 100%!important;
-        font-size: 20px;
+        font-size: 16px;
         padding: 12px;
         height: auto;
         margin-bottom: 5px;

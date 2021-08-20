@@ -14,7 +14,7 @@
 
                 <div class="form-group" id="ap">
                     <label for="">Primer Apellido</label>
-                    <input type="text" name="am" id="am" class="form-control" placeholder="Hernandez">
+                    <input type="text" name="ap" id="ap" class="form-control" placeholder="Hernandez">
                     <div class="invalid-feedback" id="error">
 
                     </div>                
@@ -22,7 +22,7 @@
 
                 <div class="form-group" id="am">
                     <label for="">Segundo Apellido</label>
-                    <input type="text" name="ap" id="ap" class="form-control" placeholder="Ramirez">
+                    <input type="text" name="am" id="am" class="form-control" placeholder="Ramirez">
                     <div class="invalid-feedback" id="error">
 
                     </div>                
@@ -85,10 +85,5 @@
 
 </div>
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script> -->
 <script src="<?=base_url('assets/js/auth/registro.js')?>"></script>
 

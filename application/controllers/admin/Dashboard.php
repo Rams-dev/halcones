@@ -9,8 +9,19 @@
 				public function index()
 			{
 				if($this->session->userdata('is_logged') and $this->session->userdata('rango') == "1" ){
-				 $data['tutorias'] = $this->Tutorias->showTutorias();
+				 $tutorias = $this->Tutorias->showTutorias();
 				 $data['datostutoria'] = $this->Tutorias->detallesTutorias();	
+				 $alumnosPorTutoria = $this->Tutorias->getNumeroDeAlumnosPorTutoria();	
+				 if($alumnosPorTutoria != ""){
+					 for($t = 0; $t < count($tutorias); $t++){
+						for($c = 0; $c < count($alumnosPorTutoria); $c++){
+							if($tutorias[$t]['id'] == $alumnosPorTutoria[$c]['tutoria_id'] ){
+								$tutorias[$t]['numeroInscritos'] = $alumnosPorTutoria[$c]['numeroInscritos'];
+							}
+						}
+					 }
+				 }
+				 $data['tutorias'] = $tutorias;
 				$this->load->view('comm/head');
 				$this->load->view('comm/nav1');
 				$this->load->view('admin/dashboard',$data);
@@ -37,7 +48,6 @@
 				if($this->session->userdata('is_logged') and $this->session->userdata('rango') == "1" ){
 				$postdata = $this->input->post();
 				$id= implode('',$postdata);
-				var_dump($postdata);
 				$alumnos=$this->Tutorias->getAlumnosInscritosPorTutoriaId($id);
 					for($t=0; $t<count($alumnos); $t++){
 						$this->Tutorias->eliminarTargetones($alumnos[$t]["id"]);
