@@ -1,6 +1,8 @@
 let $nombre = document.querySelector("#nombre")
 let $ap = document.querySelector("#apellido_p")
 let $am = document.querySelector("#apellido_m")
+let url_base = window.location.origin
+console.log(url_base)
 
 const check = (e) => {
     e.preventDefault()
@@ -28,9 +30,9 @@ inputs.forEach(input => {
     })
 });
 
-let registerBtn = document.getElementById('registerBtn')
+let form = document.getElementById('frm-register-prof')
 
-registerBtn.addEventListener('click', function(e) {
+$('#frm-register-prof').submit(function(e) {
     e.preventDefault()
     let inpustEmpty = 0;
     inputs.forEach(input => {
@@ -41,6 +43,34 @@ registerBtn.addEventListener('click', function(e) {
 
     if (inpustEmpty > 0) {
         alertify.error('Debes rellenar todas las cajas de texto')
-        return 0
+    }else{
+  
+
+        $.ajax({
+            url:'validateRegistro',
+            type:'post',
+            data: $(this).serialize(),
+        })
+        .done(function(response){
+            console.log(response);
+            let res = JSON.parse(response)
+            postAlert(res)
+        })   
+        .fail(function(err){
+            alert.error("Error temporal")
+        })   
+
     }
 })
+
+function postAlert(response){
+    console.log(response)
+    alertify.success(response.message)
+    document.getElementById('content').innerHTML = `
+    <div class="alert alert-info text-center" role="alert">
+        <p>Esta es tu matricula, anotala para iniciar sesion</p>
+        <h2>${response.matricula}</h2>
+        <a href="${url_base}/login" class="btn btn-outline-success">iniciar sesion</a>
+    </div>
+    `
+}

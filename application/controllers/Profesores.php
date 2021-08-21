@@ -65,8 +65,10 @@
 			$data['rango'] = 2;
 			$this->Profesor->guardarProfesor($data);
 			$datos['matricula'] = $matricula;
-			$this->load->view('comm/head');
-			$this->load->view('profesores/registro',$datos);
+			echo json_encode([
+				"message" => "Registo exitoso",
+				"matricula" => $datos['matricula']
+			]);
 			
 		}
 

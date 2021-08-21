@@ -1,19 +1,6 @@
 <h1 class="text-center my-5">Registro de profesores</h1>
 <div class="container">
-
-    <?php 
-        if(isset($matricula)){ 
-         ?>
-    <div class="alert alert-info text-center" role="alert">
-        <p>Esta es tu matricula, anotala para iniciar sesion</p>
-        <h2><?php echo $matricula?></h2>
-        <a href="<?=base_url('login')?> " class="btn btn-outline-success">iniciar sesion</a>
-    </div>
-    <div></div>
-    <?php 
-            } else {
-        ?>
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-4" id="content">
         <form action="<?= base_url('Profesores/validateRegistro')?>" class="form-group col-lg-4 col-md-4 col-sm-10"
             id="frm-register-prof" method="post">
             <div class="form-group">
@@ -57,7 +44,7 @@
 
         </form>
     </div>
-    <?php }?>
+    
 
 </div>
 <script src="<?=base_url('assets/js/auth/registroProfesores.js')?>"></script>
